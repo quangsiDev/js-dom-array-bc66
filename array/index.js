@@ -40,3 +40,51 @@ var numbers = [1, 3, 5, 7, 9];
 for (var i = 0; i < numbers.length; i++) {
   console.log(numbers[i]);
 }
+
+// method array
+
+// mutable and immutable array methods in javascript medium
+
+var colors = ["red", "yellow", "blue", "green"];
+// xoá màu blue => tìm vị trí của blue
+var blueIndex = colors.indexOf("blue");
+console.log("😀 - blueIndex", blueIndex);
+
+colors.splice(blueIndex, 1);
+console.log("😀 - colors", colors);
+
+// duyệt mảng bằng forEach
+
+for (var i = 0; i < colors.length; i++) {
+  console.log(colors[i]);
+}
+// so sánh map với forEach
+// callback
+colors.forEach(function (item) {
+  console.log("😀 - item", item);
+});
+
+console.log("😀 - colors", colors);
+var newColors = colors.map(function (item) {
+  console.log("😀 - item", item);
+  return "alice " + item;
+});
+console.log("😀 - newColors", newColors);
+// colors.forEach(calback);
+
+function introduce(callback) {
+  callback("Alice");
+}
+
+function sayName(username) {
+  console.log("my name: ", username);
+}
+introduce(sayName);
+// bài toán sắp xếp
+
+var numberArr = [5, 9, 30, 15];
+
+var newArray = numberArr.sort(function (a, b) {
+  return a - b;
+});
+console.log("😀 - newArray", newArray);
